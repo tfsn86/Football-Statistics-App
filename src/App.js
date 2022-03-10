@@ -11,13 +11,14 @@ function App() {
 
     try {
       const response = await fetch(
-        'https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39',
+        'https://v3.football.api-sports.io/standings?season=2021&league=39',
         {
           method: 'GET',
           headers: {
-            'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+            'x-rapidapi-host': 'v3.football.api-sports.io',
             'x-rapidapi-key': API_KEY,
           },
+          redirect: 'follow',
         }
       );
       const responseJSON = await response.json();
