@@ -1,12 +1,14 @@
-import { useFetch } from './custom-hooks/useFetch';
-
-const query = 'standings?season=2021&league=39';
+import { useGlobalContext } from './context';
 
 function App() {
-  const { loading, data } = useFetch(query);
+  const { loading, data } = useGlobalContext();
 
   if (loading) {
-    return <h1>{loading}</h1>;
+    return (
+      <div className='flex justify-center items-center h-screen text-6xl'>
+        Loading...
+      </div>
+    );
   }
 
   return (

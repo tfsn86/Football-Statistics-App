@@ -21,6 +21,7 @@ export const useFetch = (query) => {
           redirect: 'follow',
         }
       );
+
       const responseJSON = await response.json();
 
       setLoading(false);
