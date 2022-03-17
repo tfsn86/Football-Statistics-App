@@ -4,7 +4,7 @@ const API_KEY = process.env.REACT_APP_FOOTBALL_API_KEY;
 
 export const useFetch = (query) => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   const getData = useCallback(async () => {
     setLoading(true);
@@ -25,7 +25,7 @@ export const useFetch = (query) => {
       const responseJSON = await response.json();
 
       setLoading(false);
-      setData(responseJSON.response[0].league.standings[0]);
+      setData(responseJSON);
     } catch (error) {
       console.error(error);
     }

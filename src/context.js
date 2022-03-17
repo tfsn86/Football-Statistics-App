@@ -1,12 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useFetch } from './custom-hooks/useFetch';
 
 const AppContext = React.createContext();
 
-const AppProvider = ({ children }) => {
-  const [query, setQuery] = useState('standings?season=2021&league=39');
+let leagueStandingsQuery = 'standings?season=2021&league=39';
 
-  const { loading, data } = useFetch(query);
+const AppProvider = ({ children }) => {
+  const { loading, data } = useFetch(leagueStandingsQuery);
+
+  console.log(data);
 
   return (
     <AppContext.Provider value={{ loading, data }}>
