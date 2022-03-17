@@ -6,12 +6,11 @@ const AppContext = React.createContext();
 let leagueStandingsQuery = 'standings?season=2021&league=39';
 
 const AppProvider = ({ children }) => {
-  const { loading, data } = useFetch(leagueStandingsQuery);
-
-  console.log(data);
+  const { loading: leagueStandingLoading, data: leagueStandingsData } =
+    useFetch(leagueStandingsQuery);
 
   return (
-    <AppContext.Provider value={{ loading, data }}>
+    <AppContext.Provider value={{ leagueStandingLoading, leagueStandingsData }}>
       {children}
     </AppContext.Provider>
   );
