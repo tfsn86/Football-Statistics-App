@@ -14,24 +14,24 @@ const LeagueStandings = () => {
             <table>
               <thead className='bg-gray-50 border-b-2 border-gray-200'>
                 <tr>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'></th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'></th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     K
                   </th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     V
                   </th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     U
                   </th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     T
                   </th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     Mål
                   </th>
-                  <th className='p-3 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     Point
                   </th>
                 </tr>
