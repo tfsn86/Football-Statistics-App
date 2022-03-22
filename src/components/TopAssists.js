@@ -2,14 +2,14 @@ import { useGlobalContext } from '../context';
 import Loading from './Loading';
 
 const TopAssists = () => {
-  const { topAssistsLoading, topAssistsData } = useGlobalContext();
+  const { loading, data } = useGlobalContext();
 
   return (
     <>
       <div className='w-full lg:max-w-full lg:flex justify-center'>
-        {topAssistsLoading && <Loading />}
+        {loading && <Loading />}
 
-        {topAssistsData && (
+        {data[2] && (
           <div>
             <table>
               <thead className='bg-gray-50 border-b-2 border-gray-200'>
@@ -22,7 +22,7 @@ const TopAssists = () => {
                 </tr>
               </thead>
               <tbody className='divide-y divide-gray-100'>
-                {topAssistsData.response.map((item) => {
+                {data[2].response.map((item) => {
                   const { id, name } = item.player;
 
                   const {
