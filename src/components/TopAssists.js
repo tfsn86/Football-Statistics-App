@@ -13,7 +13,7 @@ const TopAssists = () => {
           {data[2] && (
             <div>
               <table className='w-full'>
-                <thead className='bg-gray-50 border-b-2 border-gray-200'>
+                <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                   <tr>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'>
@@ -22,7 +22,7 @@ const TopAssists = () => {
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
                   </tr>
                 </thead>
-                <tbody className='divide-y divide-gray-100'>
+                <tbody className='divide-y divide-gray-200 bg-white'>
                   {data[2].response.map((item) => {
                     const { id, name } = item.player;
 

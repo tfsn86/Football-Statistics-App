@@ -13,7 +13,7 @@ const TopScorers = () => {
           {data[1] && (
             <div>
               <table className='w-full'>
-                <thead className='bg-gray-50 border-b-2 border-gray-200'>
+                <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                   <tr>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'>
@@ -24,7 +24,7 @@ const TopScorers = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody className='divide-y divide-gray-100'>
+                <tbody className='divide-y divide-gray-200 bg-white'>
                   {data[1].response.map((item) => {
                     const { id, name } = item.player;
 

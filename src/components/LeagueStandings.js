@@ -12,7 +12,7 @@ const LeagueStandings = () => {
 
           {data[0] && (
             <table className='w-full'>
-              <thead className='bg-gray-50 border-b-2 border-gray-200'>
+              <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                 <tr>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
@@ -36,7 +36,7 @@ const LeagueStandings = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className='divide-y divide-gray-100'>
+              <tbody className='divide-y divide-gray-200 bg-white'>
                 {data[0].response[0].league.standings[0].map((item) => {
                   const {
                     rank,
