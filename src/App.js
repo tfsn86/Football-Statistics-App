@@ -5,10 +5,12 @@ import TopAssists from './components/TopAssists';
 function App() {
   return (
     <>
-      <div className='p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'>
-        <LeagueStandings />
-        <TopScorers />
-        <TopAssists />
+      <div className='container my-12 mx-auto px-4 md:px-12'>
+        <div className='flex flex-wrap -mx-1 lg:-mx-4'>
+          <LeagueStandings />
+          <TopScorers />
+          <TopAssists />
+        </div>
       </div>
     </>
   );

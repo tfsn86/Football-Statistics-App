@@ -6,54 +6,56 @@ const TopAssists = () => {
 
   return (
     <>
-      <div className='w-full lg:max-w-full lg:flex justify-center'>
-        {loading && <Loading />}
+      <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2 xl:w-1/3'>
+        <div className='overflow-hidden rounded-lg shadow-xl'>
+          {loading && <Loading />}
 
-        {data[2] && (
-          <div>
-            <table>
-              <thead className='bg-gray-50 border-b-2 border-gray-200'>
-                <tr>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-left'>
-                    Assists
-                  </th>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
-                </tr>
-              </thead>
-              <tbody className='divide-y divide-gray-100'>
-                {data[2].response.map((item) => {
-                  const { id, name } = item.player;
+          {data[2] && (
+            <div>
+              <table className='w-full'>
+                <thead className='bg-gray-50 border-b-2 border-gray-200'>
+                  <tr>
+                    <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
+                    <th className='p-1 text-sm font-semibold tracking-wide text-left'>
+                      Assists
+                    </th>
+                    <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
+                  </tr>
+                </thead>
+                <tbody className='divide-y divide-gray-100'>
+                  {data[2].response.map((item) => {
+                    const { id, name } = item.player;
 
-                  const {
-                    goals: { assists },
-                  } = item.statistics[0];
+                    const {
+                      goals: { assists },
+                    } = item.statistics[0];
 
-                  return (
-                    <tr key={id}>
-                      <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
-                        <img
-                          className='object-cover h-5 w-full'
-                          src={item.statistics[0].team.logo}
-                          alt='logo'
-                        />
-                      </td>
-                      <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
-                        {name}{' '}
-                        <span className='text-xs'>
-                          ({item.statistics[0].team.name})
-                        </span>
-                      </td>
-                      <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
-                        {assists}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        )}
+                    return (
+                      <tr key={id}>
+                        <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
+                          <img
+                            className='object-cover h-5 w-full'
+                            src={item.statistics[0].team.logo}
+                            alt='logo'
+                          />
+                        </td>
+                        <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
+                          {name}{' '}
+                          <span className='text-xs'>
+                            ({item.statistics[0].team.name})
+                          </span>
+                        </td>
+                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
+                          {assists}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

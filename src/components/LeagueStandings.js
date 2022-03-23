@@ -6,12 +6,12 @@ const LeagueStandings = () => {
 
   return (
     <>
-      <div className='w-full lg:max-w-full lg:flex justify-center'>
-        {loading && <Loading />}
+      <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2 xl:w-1/3'>
+        <div className='overflow-hidden rounded-lg shadow-xl'>
+          {loading && <Loading />}
 
-        {data[0] && (
-          <div>
-            <table>
+          {data[0] && (
+            <table className='w-full'>
               <thead className='bg-gray-50 border-b-2 border-gray-200'>
                 <tr>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
@@ -76,8 +76,8 @@ const LeagueStandings = () => {
                 })}
               </tbody>
             </table>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );
