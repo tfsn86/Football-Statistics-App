@@ -6,7 +6,7 @@ const TopScorers = () => {
 
   return (
     <>
-      <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2 xl:w-1/3'>
+      <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2 xl:w-1/2'>
         <div className='overflow-hidden rounded-lg shadow-xl'>
           {loading && <Loading />}
 
@@ -36,7 +36,7 @@ const TopScorers = () => {
                       <tr key={id}>
                         <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
                           <img
-                            className='object-cover h-5 w-full'
+                            className='object-contain h-5 w-full'
                             src={item.statistics[0].team.logo}
                             alt='logo'
                           />
