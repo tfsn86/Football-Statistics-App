@@ -1,3 +1,9 @@
+import {
+  IoEllipseSharp,
+  IoCheckmarkCircleSharp,
+  IoCloseCircleSharp,
+} from 'react-icons/io5';
+
 import { useGlobalContext } from '../context';
 import Loading from './Loading';
 
@@ -15,7 +21,9 @@ const LeagueStandings = () => {
               <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                 <tr>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-left'>
+                    Premier League
+                  </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     K
                   </th>
@@ -32,6 +40,9 @@ const LeagueStandings = () => {
                     Mål
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
+                    Form
+                  </th>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     Point
                   </th>
                 </tr>
@@ -42,8 +53,26 @@ const LeagueStandings = () => {
                     rank,
                     team,
                     points,
+                    form,
                     all: { played, win, draw, lose, goals },
                   } = item;
+
+                  const stringFromForm = form;
+                  const arrayStringFromForm = Array.from(stringFromForm);
+                  const newArrayStringFromForm = arrayStringFromForm.map(
+                    (item) => {
+                      if (item === 'W') {
+                        return (
+                          <IoCheckmarkCircleSharp className='text-green-600' />
+                        );
+                      } else if (item === 'D') {
+                        return <IoEllipseSharp className='text-yellow-600' />;
+                      } else if (item === 'L') {
+                        return <IoCloseCircleSharp className='text-red-600' />;
+                      }
+                      return item;
+                    }
+                  );
 
                   return (
                     <tr key={rank}>
@@ -67,6 +96,15 @@ const LeagueStandings = () => {
                       </td>
                       <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
                         {goals.for}-{goals.against}
+                      </td>
+                      <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
+                        {newArrayStringFromForm.map((item, index) => {
+                          return (
+                            <div key={index} className='inline-block'>
+                              {item}
+                            </div>
+                          );
+                        })}
                       </td>
                       <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
                         {points}

@@ -17,9 +17,11 @@ const TopAssists = () => {
                   <tr>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'>
-                      Assists
+                      Assists (Top 20)
                     </th>
-                    <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
+                    <th className='p-1 text-sm font-semibold tracking-wide text-center'>
+                      Antal
+                    </th>
                   </tr>
                 </thead>
                 <tbody className='divide-y divide-gray-200 bg-white'>

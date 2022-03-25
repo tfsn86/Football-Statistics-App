@@ -17,10 +17,10 @@ const TopScorers = () => {
                   <tr>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'>
-                      Topscorer
+                      Målscorer (Top 20)
                     </th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                      Mål
+                      Antal
                     </th>
                   </tr>
                 </thead>
