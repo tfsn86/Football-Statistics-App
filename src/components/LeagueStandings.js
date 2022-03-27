@@ -57,6 +57,7 @@ const LeagueStandings = () => {
                     all: { played, win, draw, lose, goals },
                   } = item;
 
+                  // Converting form info from string letters to array with icons
                   const stringFromForm = form;
                   const arrayStringFromForm = Array.from(stringFromForm);
                   const newArrayStringFromForm = arrayStringFromForm.map(

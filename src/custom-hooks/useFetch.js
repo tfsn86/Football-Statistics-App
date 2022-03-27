@@ -15,10 +15,12 @@ const APIFetchDetails = {
 const leagueStandingsQuery = 'standings?season=2021&league=39';
 const topScorersQuery = 'players/topscorers?season=2021&league=39';
 const topAssistsQuery = 'players/topassists?season=2021&league=39';
+const allPlayersQuery = 'players?season=2021&league=39';
 
-export const useFetch = (query) => {
+export const useFetch = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [allPlayersData, setAllPlayersData] = useState();
 
   const getData = () => {
     setLoading(true);
@@ -44,15 +46,37 @@ export const useFetch = (query) => {
         let leagueStandingsData = finalVals[0];
         let topScorersData = finalVals[1];
         let topAssistsData = finalVals[2];
+
         setData([leagueStandingsData, topScorersData, topAssistsData]);
       });
 
     setLoading(false);
   };
 
+  let allPlayersDataArray = [];
+
+  const getAllPlayersData = async (page = 1) => {
+    const response = await fetch(
+      `https://v3.football.api-sports.io/${allPlayersQuery}&page=${page}`,
+      APIFetchDetails
+    );
+
+    const responseJSON = await response.json();
+
+    if (responseJSON.paging.current <= responseJSON.paging.total) {
+      page = responseJSON.paging.current + 1;
+
+      allPlayersDataArray.push(responseJSON);
+      getAllPlayersData(page);
+    }
+
+    setAllPlayersData(allPlayersDataArray);
+  };
+
   useEffect(() => {
     getData();
+    getAllPlayersData();
   }, []);
 
-  return { loading, data };
+  return { loading, data, allPlayersData };
 };
