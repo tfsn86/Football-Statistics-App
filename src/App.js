@@ -1,6 +1,7 @@
 import LeagueStandings from './components/LeagueStandings';
 import TopScorers from './components/TopScorers';
 import TopAssists from './components/TopAssists';
+import ShotsOnGoal from './components/ShotsOnGoal';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           <LeagueStandings />
           <TopScorers />
           <TopAssists />
+          <ShotsOnGoal />
         </div>
       </div>
     </>

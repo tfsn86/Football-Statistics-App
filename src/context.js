@@ -4,13 +4,15 @@ import { useFetch } from './custom-hooks/useFetch';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const { loading, data } = useFetch();
+  const { loading, data, allPlayersData, shotsOnGoalData } = useFetch();
 
   return (
     <AppContext.Provider
       value={{
         loading,
         data,
+        allPlayersData,
+        shotsOnGoalData,
       }}
     >
       {children}
