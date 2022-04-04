@@ -23,8 +23,7 @@ const allPlayersQuery = 'players?season=2021&league=39';
 export const useFetch = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [allPlayersData, setAllPlayersData] = useState();
-  const [shotsOnGoalData, setShotsOnGoalData] = useState();
+  const [shotsOnGoalData, setShotsOnGoalData] = useState([]);
 
   const getData = () => {
     setLoading(true);
@@ -81,10 +80,8 @@ export const useFetch = () => {
       });
 
       allPlayersDataArrayOfArrays.push(playerDataArray);
-      allPlayersDataFlattenedArray = [].concat.apply(
-        [],
-        allPlayersDataArrayOfArrays
-      );
+
+      allPlayersDataFlattenedArray = [].concat(...allPlayersDataArrayOfArrays);
 
       getAllPlayersData(page);
     }
@@ -92,8 +89,6 @@ export const useFetch = () => {
     setShotsOnGoalData(
       sortAndSetTop20ShotsOnGoal(allPlayersDataFlattenedArray)
     );
-
-    setAllPlayersData(allPlayersDataFlattenedArray);
   };
 
   useEffect(() => {
@@ -102,5 +97,5 @@ export const useFetch = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return { loading, data, allPlayersData, shotsOnGoalData };
+  return { loading, data, shotsOnGoalData };
 };

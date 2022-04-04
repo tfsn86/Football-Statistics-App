@@ -16,11 +16,9 @@ const ShotsOnGoal = () => {
                     <th className='p-1 text-sm font-semibold tracking-wide text-left'>
                       Skud på mål (Top 20)
                     </th>
+
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                       Antal (indenfor rammen)
-                    </th>
-                    <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                      Antal (i alt)
                     </th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                       Præcision
@@ -52,10 +50,7 @@ const ShotsOnGoal = () => {
                           {name} <span className='text-xs'>({team})</span>
                         </td>
                         <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
-                          {shotsOnTarget}
-                        </td>
-                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
-                          {shotsTotal}
+                          {shotsTotal} ({shotsOnTarget})
                         </td>
                         <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
                           {shotsOnGoalAccuracyPct}%
