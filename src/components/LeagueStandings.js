@@ -20,8 +20,7 @@ const LeagueStandings = () => {
             <table className='w-full'>
               <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                 <tr>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-center'></th>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-left'>
+                  <th className='p-1 pl-3 text-sm font-semibold tracking-wide text-left'>
                     Premier League
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
@@ -36,10 +35,10 @@ const LeagueStandings = () => {
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
                     T
                   </th>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center hidden md:table-cell'>
                     Mål
                   </th>
-                  <th className='p-1 text-sm font-semibold tracking-wide text-center'>
+                  <th className='p-1 text-sm font-semibold tracking-wide text-center hidden md:table-cell'>
                     Form
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
@@ -77,11 +76,8 @@ const LeagueStandings = () => {
 
                   return (
                     <tr key={rank}>
-                      <td className='p- text-sm text-gray-700 text-center whitespace-nowrap'>
-                        {rank}
-                      </td>
-                      <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
-                        {team.name}
+                      <td className='p-1 pl-3 text-sm text-gray-700 text-left whitespace-nowrap'>
+                        {rank}. {team.name}
                       </td>
                       <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
                         {played}
@@ -95,10 +91,10 @@ const LeagueStandings = () => {
                       <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
                         {lose}
                       </td>
-                      <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
+                      <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap hidden md:table-cell'>
                         {goals.for}-{goals.against}
                       </td>
-                      <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
+                      <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap hidden md:table-cell'>
                         {newArrayStringFromForm.map((item, index) => {
                           return (
                             <div key={index} className='inline-block'>

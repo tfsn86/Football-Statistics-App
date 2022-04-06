@@ -4,6 +4,9 @@ module.exports = {
     extend: {},
     fontSize: {
       xs: '.70rem',
+      xl: ['24px', '32px'],
+      '2xl': '1.5rem',
+      '5xl': '3rem',
     },
   },
   plugins: [],
