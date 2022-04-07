@@ -12,16 +12,15 @@ const ShotsOnGoal = () => {
               <table className='w-full'>
                 <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                   <tr>
-                    <th className='p-1 text-sm font-semibold tracking-wide text-left'></th>
-                    <th className='p-1 text-sm font-semibold tracking-wide text-left'>
-                      Skud på mål (Top 20)
+                    <th className='p-1 pl-3 text-sm font-semibold tracking-wide text-left'>
+                      Shots
                     </th>
 
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                      Antal (indenfor rammen)
+                      Shots (On Target)
                     </th>
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                      Præcision
+                      Accuracy
                     </th>
                   </tr>
                 </thead>
@@ -39,20 +38,18 @@ const ShotsOnGoal = () => {
 
                     return (
                       <tr key={id}>
-                        <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
+                        <td className='p-1 pl-3 text-sm text-gray-700 text-left whitespace-nowrap'>
                           <img
-                            className='object-contain h-5 w-full'
+                            className='object-contain h-5 inline-flex'
                             src={teamLogo}
                             alt='logo'
-                          />
-                        </td>
-                        <td className='p-1 text-sm text-gray-700 text-left whitespace-nowrap'>
+                          />{' '}
                           {name} <span className='text-xs'>({team})</span>
                         </td>
                         <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
                           {shotsTotal} ({shotsOnTarget})
                         </td>
-                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
+                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap hidden md:table-cell'>
                           {shotsOnGoalAccuracyPct}%
                         </td>
                       </tr>

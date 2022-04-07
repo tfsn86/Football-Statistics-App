@@ -16,11 +16,11 @@ const TopScorers = () => {
                 <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                   <tr>
                     <th className='p-1 pl-3 text-sm font-semibold tracking-wide text-left'>
-                      Målscorer (Top 20)
+                      Top Scorers
                     </th>
 
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                      Antal
+                      Goals
                     </th>
                   </tr>
                 </thead>

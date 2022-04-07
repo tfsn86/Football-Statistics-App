@@ -21,28 +21,28 @@ const LeagueStandings = () => {
               <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                 <tr>
                   <th className='p-1 pl-3 text-sm font-semibold tracking-wide text-left'>
-                    Premier League
+                    Premier League Table
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                    K
+                    Pl
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                    V
+                    W
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                    U
+                    D
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                    T
+                    L
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center hidden md:table-cell'>
-                    Mål
+                    Goals
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center hidden md:table-cell'>
                     Form
                   </th>
                   <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                    Point
+                    Points
                   </th>
                 </tr>
               </thead>
