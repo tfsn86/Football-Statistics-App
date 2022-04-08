@@ -9,7 +9,7 @@ function App() {
       <div className='container my-12 mx-auto px-4 md:px-12 lg:px-40'>
         <div className='flex flex-col justify-center mb-12'>
           <img
-            className='mx-auto'
+            className='mx-auto h-20 md:h-30 xl:h-40'
             src='https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/540px-Premier_League_Logo.svg.png'
             alt='premier league logo'
           />

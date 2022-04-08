@@ -13,13 +13,16 @@ const ShotsOnGoal = () => {
                 <thead className='bg-[#38003c] text-white border-b-2 border-gray-200'>
                   <tr>
                     <th className='p-1 pl-3 text-sm font-semibold tracking-wide text-left'>
-                      Shots
+                      Shots On Goal
                     </th>
 
                     <th className='p-1 text-sm font-semibold tracking-wide text-center'>
-                      Shots (On Target)
+                      Shots
                     </th>
-                    <th className='p-1 text-sm font-semibold tracking-wide text-center'>
+                    <th className='p-1 text-sm font-semibold tracking-wide text-center hidden xl:table-cell'>
+                      On Target
+                    </th>
+                    <th className='p-1 text-sm font-semibold tracking-wide text-center hidden xl:table-cell'>
                       Accuracy
                     </th>
                   </tr>
@@ -47,9 +50,12 @@ const ShotsOnGoal = () => {
                           {name} <span className='text-xs'>({team})</span>
                         </td>
                         <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap'>
-                          {shotsTotal} ({shotsOnTarget})
+                          {shotsTotal}
                         </td>
-                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap hidden md:table-cell'>
+                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap hidden xl:table-cell'>
+                          {shotsOnTarget}
+                        </td>
+                        <td className='p-1 text-sm text-gray-700 text-center whitespace-nowrap hidden xl:table-cell'>
                           {shotsOnGoalAccuracyPct}%
                         </td>
                       </tr>
