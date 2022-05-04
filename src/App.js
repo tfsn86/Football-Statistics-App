@@ -1,7 +1,7 @@
 import LeagueStandings from './components/LeagueStandings';
 import TopScorers from './components/TopScorers';
 import TopAssists from './components/TopAssists';
-import ShotsOnGoal from './components/ShotsOnGoal';
+// import ShotsOnGoal from './components/ShotsOnGoal';
 
 function App() {
   return (
