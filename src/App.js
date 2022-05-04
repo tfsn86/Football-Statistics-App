@@ -23,7 +23,7 @@ function App() {
           <LeagueStandings />
           <TopScorers />
           <TopAssists />
-          <ShotsOnGoal />
+          {/* <ShotsOnGoal /> */}
         </div>
       </div>
     </>
